@@ -8,21 +8,25 @@ Probado en Ubuntu 14.04.
 
 > sudo nano /etc/ssh/sshd_config
 
-### Modificar esta línea (Subsystem)
+ Modificar esta línea (Subsystem)
 > Subsystem sftp internal-sftp 
 
-### Añadir el bloque al final del archivo
->Match Group sftp-users
->    ChrootDirectory %h
->    ForceCommand internal-sftp
->    AllowTcpForwarding no
->    PermitTunnel no
->    X11Forwarding no
+ Añadir el bloque al final del archivo
+> Match Group sftp-users
+
+>  ChrootDirectory %h
+
+>  ForceCommand internal-sftp
+
+> AllowTcpForwarding no
+
+> PermitTunnel no
+
+> X11Forwarding no
 
 ### Descargar y ejecutar.
 
 wget https://raw.githubusercontent.com/RobertCastro/sftp-jail-ubuntu/master/sftp-jail
-
 
 > sudo chmod +x sftp-jail
 
